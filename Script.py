@@ -7,7 +7,7 @@ config = {
     'port': '3310',
     'database': 'db_test'
 }
-
+## esta es una prueba
 conn = mysql.connector.connect(**config)
 cursor = conn.cursor()
 query = "SELECT * FROM users"
