@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: db_container
+    environment:
+      MYSQL_ROOT_PASSWORD: admin1
+      MYSQL_DATABASE: db_test
+    ports:
+      - "3310:3306"  # Mapear el puerto 3306 del contenedor de la base de datos al puerto 3306 del host
+
+  python:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db  # Dependencia del contenedor Python al contenedor de la base de datos 
+
