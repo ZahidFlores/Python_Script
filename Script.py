@@ -6,7 +6,7 @@ mydb = mysql.connector.connect(
     password="contraseña",
     database="db_test"
 )
-
+##
 mycursor = mydb.cursor()
 mycursor.execute("SELECT * FROM users")
 
